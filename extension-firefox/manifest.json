@@ -1,0 +1,32 @@
+{
+	"manifest_version": 2,
+	"default_locale": "en",
+	"name": "__MSG_name__",
+   "description": "__MSG_description__",
+	"name": "JoyReactor Improved - Image Viewer",
+	"version": "1.0.0",
+	"description": "Заменяет стандартное окно сайта JoyReactor для просмотра изображений  на более удобное и функциональное.",
+	"icons": {
+		"48": "icons/icon-48.png",
+		"96": "icons/icon-96.png"
+	},
+	"applications": {
+		"gecko": {
+			"id": "melserval@outlook.com",
+			"strict_min_version": "48.0"
+		}
+	},
+	"content_scripts": [
+		{
+			"matches": ["*://*.joyreactor.cc/*"],
+			"js": ["content/content.js"],
+			"css": ["content/content.css"]
+		}
+	],
+	"permissions": [
+      "downloads"
+   ],
+	"background": {
+  		"scripts": ["background.js"]
+	}
+}
